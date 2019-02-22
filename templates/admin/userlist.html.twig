@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div>
+        <a class="btn btn-dark" href="{{ path('app_admin_users_create') }}">Create</a>
+
+        <table class="table">
+            <tr>
+                <th>Mail</th>
+                <th>User</th>
+                <th>Options</th>
+            </tr>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>
+                        <a class="btn btn-dark" href="{{ path('app_admin_users_edit', {'id' : user.id}) }}">Edit</a>
+                        <a class="btn btn-danger" href="{{ path('app_admin_users_delete', {'id' : user.id}) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
+

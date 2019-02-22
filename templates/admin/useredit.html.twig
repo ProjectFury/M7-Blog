@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="col-4  box-form">
+        <h2>Editing user</h2>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form2) }}
+        {{ form_errors(form2) }}
+        <input type="submit" value="Edit" class="btn btn-success mt-3">
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
